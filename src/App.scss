@@ -1,0 +1,29 @@
+@import 'styles/themes';
+@import 'styles/global';
+@import 'styles/type';
+
+// Multiple Pages
+@import 'styles/navbar';
+@import 'styles/footer';
+@import 'styles/btn';
+@import 'styles/pageLinks.scss';
+@import 'styles/pageDirectory';
+
+// Home
+@import 'styles/heroHompage';
+@import 'styles/welcome';
+@import 'styles/homepageCTA';
+@import 'styles/featured';
+
+// Portfolio
+@import 'styles/portfolioGrid';
+
+// About
+@import 'styles/aboutHero';
+@import 'styles/heritage';
+@import 'styles/leaders';
+
+// Contact
+@import 'styles/contactHero';
+@import 'styles/contactDetails';
+@import 'styles/contactForm';
