@@ -4,7 +4,7 @@ $colors: (
     medium-gray: hsl(223, 7%, 53%),
     light-gray: hsl(225, 17%, 82%),
     very-light-gray: hsl(230, 21%, 95%),
-    red: hsl(0, 68%, 61%)
+    error: hsl(0, 68%, 61%)
 );
 
 @function get-color($color) {
