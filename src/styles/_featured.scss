@@ -1,0 +1,51 @@
+.featured__section {
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 50px;
+
+        &--heading {
+            font-size: 2.75em;
+            font-weight: 500;
+        }
+    }
+
+    &__portfolios {
+        display: flex;
+        justify-content: space-between;
+
+        .featured__section__portfolio {
+            display: flex;
+            position: relative;
+            width: calc(96% / 3);
+
+            &__image {
+                width: 100%;
+                filter: brightness(.65);
+            }
+
+            &__number {
+                position: absolute;
+                color: get-color(very-light-gray);
+                font-weight: 500;
+                font-size: calc(100px + 5vw);
+                right: -5px; top: 15%;
+                opacity: .4;
+            }
+
+            &__textbox {
+                position: absolute;
+                bottom: 7%; left: 20px;
+                color: white;
+                z-index: 2;
+
+                &--heading {
+                    font-size: 1.2em;
+                    font-weight: 700;
+                    margin-bottom: 8px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,42 @@
+.heritage {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 100px;
+
+    & > * {
+        flex: 0 0 45%;
+    }
+
+    &__textbox {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &--line {
+            width: 50px;
+            border-color: get-color(very-light-gray);
+        }
+
+        &--heading {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        &--subheading {
+            &--paragraph {
+                margin-bottom: 20px;
+                font-size: 13px;
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    &__image__container {
+        img {
+            width: 100%; height: 100%;
+        }
+    }
+}

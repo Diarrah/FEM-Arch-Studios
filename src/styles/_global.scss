@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    &:focus {
+        outline: 0;
+    }
+}
+
+body {
+    max-width: 1900px;
+    margin: 0 auto;
+    min-height: 100vh;
+
+    & > * {
+        padding: 0 9vw;
+    }
+}
+
+ul {
+    list-style: none;
+}
+
+a { 
+    text-decoration: none;
+    color: inherit;
+}

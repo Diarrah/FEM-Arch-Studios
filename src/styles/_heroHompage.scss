@@ -1,0 +1,60 @@
+.homepage__hero {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 200px;
+
+    &--backdrop {
+        position: absolute;
+        top: 0; bottom: 0; left: 0; right: 0;
+        z-index: -1;
+
+        img {
+            filter: brightness(.75);
+            height: 100%; width: 100%;
+        }
+    }
+
+    &__textbox {
+        max-width: 55%; height: 350px;
+        margin: 150px;
+
+        & > * {
+            color: get-color(very-light-gray);
+            display: flex;
+        }
+
+        &--heading {
+            font-size: 5.33em;
+        }
+
+        &--subheading {
+            margin: 20px 0;
+            height: 28%;
+        }        
+    }
+
+    &--pagination {
+        position: absolute;
+        bottom: 0; left: -60px;
+
+        .pagination__btn {
+            background-color: white;
+            color: get-color(medium-gray);
+            height: 60px; width: 60px;
+            border: 0;
+            font-family: inherit;
+            font-weight: 700;
+            cursor: pointer;
+
+            &:hover {
+                background-color: get-color(very-light-gray);
+            }
+
+            &.active {
+                background-color: get-color(dark-blue);
+                color: white;
+            }
+        }
+    }
+}

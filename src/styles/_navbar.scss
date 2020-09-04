@@ -1,0 +1,19 @@
+.navbar {
+    display: flex;
+    position: relative;
+    align-items: center;
+    padding: 35px 0;
+    color: get-color(medium-gray);
+
+    &__logo {
+        margin-right: 75px;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        height: 70%; width: 1px;
+        background-color: get-color(light-gray);
+        top: 0px; bottom: 0; left: -4.5vw;
+    }
+}

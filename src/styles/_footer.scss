@@ -1,0 +1,43 @@
+.footer {
+    display: flex;
+    position: relative;
+    background-color: get-color(very-light-gray);
+    color: get-color(medium-gray);
+    height: 125px; width: calc(100% - 100px);
+    margin-top: 150px;
+
+    &__logo__container {
+        background-color: get-color(dark-blue);
+        display: flex;
+        margin-right: 75px;
+        width: 125px;
+
+        a {
+            display: flex;
+            width: 100%;
+            
+            img {
+                transform: scale(.75);
+                margin: auto;
+            }
+        }        
+    }
+
+    &__links__container {
+        display: flex;
+        justify-content: space-between;
+        align-self: center;
+        height: min-content; width: 300px;    
+        font-weight: 700;
+        text-transform: capitalize;
+
+        li a:hover {
+            color: get-color(dark-blue);
+        }
+    }
+
+    &__btn {
+        position: absolute;
+        right: -100px; top: 37.5px;
+    }
+}

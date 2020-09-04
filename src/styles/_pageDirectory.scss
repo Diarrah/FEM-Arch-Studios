@@ -1,0 +1,25 @@
+.page {
+    position: relative;
+
+    &__directory {
+        position: absolute;
+        display: flex;
+        top: 0; left: -9vw;
+        width: 9vw;
+        color: get-color(light-gray);
+        transform: translateY(-100%);
+
+        span {
+            display: flex;
+            white-space: nowrap;
+            align-items: center;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 10px;
+            transform: rotate(90deg);
+            transform-origin: left bottom;
+            margin-left: calc(4.5vw - 15px);
+            height: 30px;
+        }
+    }
+}

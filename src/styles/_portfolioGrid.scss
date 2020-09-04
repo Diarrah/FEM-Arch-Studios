@@ -1,0 +1,27 @@
+.portfolios__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+
+    .portfolio__thumbnail {
+        display: flex;
+        position: relative;
+
+        &__background {
+            filter: brightness(.75);
+            display: flex;
+            width: 100%;
+        }
+
+        &__textbox {
+            position: absolute;
+            bottom: 25px; left: 15px;
+            color: get-color(very-light-gray);
+        }
+
+        &:hover {
+            box-shadow: 1px 1px 4px 1px rgba(get-color(dark-blue), .25);
+            filter: grayscale(.45);
+        }
+    }
+}

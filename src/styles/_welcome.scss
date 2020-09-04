@@ -1,0 +1,48 @@
+.welcome__section {
+    display: flex;
+    position: relative;
+    height: max-content;
+    margin-bottom: 100px;
+
+    &__heading {
+        position: absolute;
+        transform: translateY(-50%);
+        font-weight: 500;
+    }
+
+    &__textbox {
+        display: flex;
+        position: relative;
+        align-items: center;
+        width: 70%; height: min-content;
+
+        .welcome__section__main__content {
+            width: 60%;
+            margin: 35px auto 0;
+        
+            &--subheading {
+                margin-bottom: 30px;
+            }
+
+            &--paragraph {
+                margin-bottom: 20px;
+                font-size: 14px;
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    &__image__container {
+        position: absolute;
+        z-index: -1;
+        width: 30%;
+        top: 0; bottom: 0; right: 0; 
+
+        img {
+            object-fit: cover;
+            width: 100%; height: 100%;
+        }
+    }
+}

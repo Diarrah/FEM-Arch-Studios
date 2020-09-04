@@ -1,0 +1,71 @@
+.contact__details {
+    position: relative;
+
+    &__line {
+        position: absolute;
+        width: 50px;
+        border-color: get-color(very-light-gray);
+        top: -75px;
+    }
+
+    &__info {
+        display: flex;
+        justify-content: space-between;
+
+        &--heading {
+            flex: 0 0 30%;
+        }
+
+        &--locations {
+            display: flex;
+            justify-content: space-between;
+            width: 65%;
+
+            & > * {
+                width: 45%;
+    
+                address {
+                    color: get-color(dark-gray);
+                    font-style: normal;
+                    width: 100%;
+    
+                    ul {
+                        margin-top: 20px;
+    
+                        li {
+                            margin-bottom: 20px;
+                            display: flex;
+                            justify-content: space-between;
+                            text-align: right;
+                            font-size: .90em;
+    
+                            span:last-of-type { 
+                                margin-left: 10px;
+                            }   
+                        }
+                    }
+                }
+    
+                a {
+                    display: flex;
+                    align-items: center;
+                    margin-left: 25px;
+    
+                    img {
+                        margin-left: 15px;
+                    }
+                }
+            } 
+        }
+    }  
+
+    &__map__container {
+        display: flex;
+        margin: 150px 0 100px;
+
+        img {
+            max-width: 100%;
+            width: 100%;
+        };
+    }
+}

@@ -1,0 +1,76 @@
+.connect__section {
+    display: flex;
+    justify-content: space-between;
+
+    &__heading {
+        flex:  0 0 25%;
+    }
+
+    &__form {
+        position: relative;
+        flex: 0 0 68%;
+
+        & > * {
+            margin-bottom: 15px;
+            position: relative;
+            &:last-of-type { margin-bottom: 0 }
+
+            input, textarea {
+                font-family: inherit;
+                width: 100%;
+                padding: 10px 20px;
+                border: 0;
+                border-bottom: 1px solid get-color(medium-gray);
+
+                &::placeholder {
+                    color: get-color(medium-gray);
+                }
+
+                &:focus-within {
+                    border-bottom: 1px solid get-color(dark-blue);
+                }
+            }
+
+            textarea {
+                display: flex;
+                resize: vertical;
+                min-height: 100px; max-height: 200px;             
+            }
+
+            small {
+                display: none;
+                position: absolute;
+                right: 10px; bottom: 2px;
+                color: get-color(error);
+                font-size: .75em;
+            }
+
+            &.invalid {
+                input, textarea {
+                    color: get-color(error);
+                    border-bottom: 1px solid get-color(error);
+                    &::placeholder {
+                        color: get-color(error)
+                    }
+                }
+                small {
+                    display: block;
+                }
+            }
+        }
+
+        &__button {
+            position: absolute;
+            display: flex;
+            border: 0;
+            top: 100%; right: 0;
+            height: 55px; width: 55px;
+            background-color: get-color(dark-blue);
+            cursor: pointer;
+
+            &--arrow {
+                margin: auto;
+            }
+        }
+    }
+}
