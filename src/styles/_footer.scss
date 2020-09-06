@@ -10,34 +10,93 @@
         background-color: get-color(dark-blue);
         display: flex;
         margin-right: 75px;
-        width: 125px;
 
         a {
             display: flex;
-            width: 100%;
+            width: 125px; height: 125px;
             
             img {
                 transform: scale(.75);
                 margin: auto;
             }
-        }        
+        }   
     }
 
-    &__links__container {
+    &__links {
+        width: 100%;
         display: flex;
-        justify-content: space-between;
-        align-self: center;
-        height: min-content; width: 300px;    
-        font-weight: 700;
-        text-transform: capitalize;
-
-        li a:hover {
-            color: get-color(dark-blue);
-        }
+        flex-direction: column;
+        justify-content: center;
     }
 
     &__btn {
         position: absolute;
         right: -100px; top: 37.5px;
+    }
+
+    @media screen and (max-width: 960px) {
+        left: -9vw;
+        width: calc(100% + 9vw); 
+
+        &__btn {
+            right: -9vw;
+        }
+    }
+
+    @media screen and (max-width: 750px) {
+        &__links {
+            width: max-content;
+            position: absolute;
+            bottom: 15px; left: calc(50vw - 40px);
+            
+            ul {
+                flex-direction: column;
+                
+                li {
+                    margin-bottom: 20px;
+                    &:last-of-type { margin-bottom: 0 }
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 540px) {
+        flex-direction: column;
+        align-items: center;
+        width: calc(100% + 18vw);
+        height: max-content;
+        padding: 0 20px 20px;
+        margin-top: 175px;
+
+        &__logo__container {
+            margin: -55px 0 0 0;
+
+            a {
+                height: 110px; 
+                width: 110px;
+            }
+        }
+
+        &__links {
+            position: relative;
+            align-self: center;
+            bottom: auto; left: auto;
+            margin: 35px 0;
+
+            ul li {
+                margin-bottom: 25px;
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        &__btn {
+            position: relative;
+            justify-content: center;
+            top: auto; right: auto;
+            min-width: 100%; 
+            height: 60px !important;
+        }
     }
 }

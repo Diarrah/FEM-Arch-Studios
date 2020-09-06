@@ -2,11 +2,18 @@
     display: flex;
     position: relative;
     align-items: center;
-    padding: 35px 0;
+    justify-content: space-between;
     color: get-color(medium-gray);
+    padding: 35px 0;
 
-    &__logo {
-        margin-right: 75px;
+    &__logo { margin-right: 75px }
+
+    &__links {
+        width: 100%;
+
+        @media screen and (max-width: 540px) {
+            display: none;
+        }
     }
 
     &::before {
@@ -15,5 +22,91 @@
         height: 70%; width: 1px;
         background-color: get-color(light-gray);
         top: 0px; bottom: 0; left: -4.5vw;
+
+        @media screen and (max-width: 540px) {
+            display: none;
+        }
+    }
+
+    .navbar__links--mobile {
+        display: none;
+    }
+
+    &--mobile {
+        display: none;
+
+        & > * { color: black }
+
+        .fa.fa-times {
+            display: none;    
+            padding: 14px 16px;
+            border-radius: 50%;
+            
+            &.spin {
+                transform: rotateZ(360deg);
+                transition: transform .85s;
+            }
+
+            &:hover {
+                color: get-color(very-light-gray);
+                background-color: rgba(get-color(dark-blue), .6);
+            }
+        }
+
+        .fa.fa-bars {
+            margin-right: 16px;
+        }
+
+        &.change {
+            .fa.fa-times { display: block }
+            .fa.fa-bars { display: none }
+        }
+
+        @media screen and (max-width: 540px) {
+            display: flex;
+        }
+    }
+
+    @media screen and (max-width: 540px) {
+        .overlay {
+            transform: translateX(105%);
+            position: absolute;
+            width: 100vw; height: 102vh;
+            left: -9vw; top: 100%;
+            background-color: rgba(get-color(dark-blue), .75);
+            z-index: 2;
+            transition: .55s;
+
+            &.active {
+                transform: translateX(0);
+            }
+        }    
+
+        .navbar__links--mobile {
+            position: absolute;
+            display: flex;
+            top: 100%; right: -9vw;
+            width: 91vw;
+            padding: 60px 0 60px 40px;
+            background-color: get-color(very-light-gray);
+            transform: translateY(calc(-100% - 115px));
+            transition: .70s ease-in-out;
+            z-index: 5;
+    
+            ul {
+                flex-direction: column;
+                
+                li {
+                    color: get-color(dark-blue);
+                    font-size: 16px;
+                    margin-bottom: 20px;
+                    letter-spacing: 1px;
+                }
+            }
+    
+            &.deployed {
+                transform: translateY(0);
+            }
+        }
     }
 }

@@ -15,6 +15,11 @@
         &--line {
             width: 50px;
             border-color: get-color(very-light-gray);
+
+            @media screen and (max-width: 540px) {
+                position: relative;
+                top: -30px
+            }
         }
 
         &--heading {
@@ -32,11 +37,24 @@
                 }
             }
         }
+
+        @media screen and (max-width: 850px) {
+            flex: 1;
+
+            &--heading {
+                max-width: 100px;
+                margin: 40px 0 20px;
+            }
+        }
     }
 
     &__image__container {
         img {
             width: 100%; height: 100%;
+        }
+
+        @media screen and (max-width: 850px) {
+            display: none;
         }
     }
 }

@@ -49,10 +49,18 @@
                 a {
                     display: flex;
                     align-items: center;
+                    white-space: nowrap;
                     margin-left: 25px;
     
                     img {
                         margin-left: 15px;
+                        transition: .35s;
+                    }
+
+                    &:hover {
+                        img {
+                            transform: translateX(10px);
+                        }
                     }
                 }
             } 
@@ -61,11 +69,82 @@
 
     &__map__container {
         display: flex;
-        margin: 150px 0 100px;
+        margin: 125px 0;
 
         img {
             max-width: 100%;
             width: 100%;
-        };
+        }
+    }
+
+    @media screen and (max-width: 845px) {
+        &__info {
+            flex-direction: column;
+            
+            &--locations {
+                width: 100%;
+                margin-top: 40px;
+
+                &-main { left: -15px }
+                &-second { left: 15px }
+
+                & > * {
+                    width: 100%;
+                    position: relative;
+
+                    address ul li {
+                        justify-content: start;
+                        position: relative;
+
+                        span:last-of-type {
+                            position: absolute;
+                            left: 120px;
+                        }
+                    }
+                }
+            }
+        } 
+    }
+
+    @media screen and (max-width: 700px) {
+        &__info {
+            &--heading { width: 100px }
+            &--locations {
+                flex-direction: column;
+
+                & > * {
+                    display: flex;
+                    left: 0;
+
+                    address {
+                        width: 65%;
+                    }
+                }
+
+                &-main {
+                    margin-bottom: 50px;
+                }
+            }
+        }      
+    }
+
+    @media screen and (max-width: 540px) {
+        &__info {
+            &--locations {
+                & > * {
+                    display: flex;
+                    flex-direction: column;
+
+                    address {
+                        min-width: 100%;
+                    }
+                }
+            }
+        }
+        &__map__container {
+            position: relative;
+            left: -9vw;
+            width: calc(100% + 18vw);
+        }      
     }
 }

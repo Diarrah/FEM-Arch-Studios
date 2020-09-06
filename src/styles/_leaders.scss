@@ -41,7 +41,7 @@
                                 display: none;
                                 position: absolute;
                                 top: 10%; bottom: 10%; left: 10%; right: 10%;
-                                background-color: white;
+                                background-color: get-color(very-light-gray);
                                 z-index: 1;
                             }
                             
@@ -64,6 +64,10 @@
                             font-size: calc(16px + 2vw);
                             color: get-color(very-light-gray);
                             transition: .2s;
+
+                            @media screen and (max-width: 540px) {
+                                font-size: 30px;
+                            }
                         }
                     }
                 }
@@ -87,6 +91,58 @@
                     color: get-color(dark-gray);
                 }
             }
+        }
+    }
+
+    @media screen and (max-width: 850px) {
+        flex-direction: column;
+
+        &__heading {
+            max-width: 100px;
+            margin-bottom: 40px;
+        }
+
+        &__card__container {
+            width: 100%;
+
+            .leaders__card {
+                &__avatar__container {
+                    flex-direction: column;
+                    cursor: default;
+
+                    &:hover {
+                        img {
+                            filter: brightness(1);
+                        }
+                    }
+
+                    .leaders__card__avatar__overlay  {
+                        display: flex;
+                        justify-content: start;
+                        top: 100%;
+                        transform: translateY(200%);
+                        height: min-content;
+
+                        a i {
+                            color: get-color(dark-blue);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 540px) {
+        &__card__container {
+            display: flex;
+            flex-direction: column;
+
+            .leaders__card__avatar__container {
+                img {
+                    object-fit: cover;
+                    max-height: 280px; 
+                }
+            } 
         }
     }
 }

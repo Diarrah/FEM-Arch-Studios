@@ -24,4 +24,9 @@
             filter: grayscale(.45);
         }
     }
+
+    @media screen and (max-width: 805px) {
+        display: flex;
+        flex-direction: column;
+    }
 }

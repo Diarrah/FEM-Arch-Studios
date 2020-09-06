@@ -4,6 +4,10 @@
 
     &__heading {
         flex:  0 0 25%;
+
+        @media screen and (max-width: 540px) {
+            width: 50%;
+        }
     }
 
     &__form {
@@ -70,7 +74,20 @@
 
             &--arrow {
                 margin: auto;
+
+                &.active {
+                    transform: translateX(19px);
+                    transition: .75s;
+                }
             }
+        }
+    }
+
+    @media screen and (max-width: 960px) {
+        flex-direction: column;
+
+        &__heading {
+            margin-bottom: 40px;
         }
     }
 }

@@ -12,7 +12,16 @@
         img {
             filter: brightness(.75);
             height: 100%; width: 100%;
-        }
+
+            &.active--timer, .active--click {
+                animation: flash 1200ms;
+
+                @keyframes flash {
+                    0% { opacity: .40 }
+                    100% { opacity: 1 }
+                }
+            }               
+        }  
     }
 
     &__textbox {
@@ -25,13 +34,19 @@
         }
 
         &--heading {
-            font-size: 5.33em;
+            font-size: calc(3em + 2.2vw);
+            height: 55%;
+            align-items: flex-end;
+
+            @media screen and (min-width: 1950px) {
+                font-size: 5.33em;
+            }
         }
 
         &--subheading {
-            margin: 20px 0;
+            margin: 20px 0 10px;
             height: 28%;
-        }        
+        } 
     }
 
     &--pagination {
@@ -46,6 +61,7 @@
             font-family: inherit;
             font-weight: 700;
             cursor: pointer;
+            transition: .35s;
 
             &:hover {
                 background-color: get-color(very-light-gray);
@@ -55,6 +71,56 @@
                 background-color: get-color(dark-blue);
                 color: white;
             }
+        }
+
+        @media screen and (max-width: 755px) {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 985px) {
+        &__textbox {
+            max-width: 65%;
+            margin: 120px;
+        }
+
+        &--pagination {
+            left: -50px;
+
+            .pagination__btn {
+                height: 50px; width: 50px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 755px) {
+        margin-bottom: 150px;
+        
+        &__textbox {
+            max-width: 80%;
+            display: flex;
+            flex-direction: column;
+            margin: 80px auto 65px;
+            justify-content: center;
+
+            &--heading, &--subheading {
+                height: min-content;
+            }
+
+            &--subheading {
+                margin: 30px 0;
+            }
+        }  
+    }
+
+    @media screen and (max-width: 540px) {
+        left: -9vw;
+        width: calc(100% + 18vw);
+        margin-bottom: 125px;
+    
+        &__textbox {
+            height: 400px;
+            margin: 60px auto;
         }
     }
 }

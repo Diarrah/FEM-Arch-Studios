@@ -4,15 +4,19 @@ html {
     font-family: 'Spartan', sans-serif;
     font-size: 15px;
     scroll-behavior: smooth;
+
+    @media screen and (max-width: 900px) {
+        font-size: 13px;
+    }
 }
 
 h1 {
-    font-size: 150px;
+    font-size: calc(5em + 5vw);
     color: get-color(very-light-gray);
 }
 
 h2 {
-    font-size: 3.733em;
+    font-size: calc(2em + 1.5vw);
 }
 
 p {
