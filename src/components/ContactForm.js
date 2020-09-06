@@ -1,7 +1,9 @@
-import React, { useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import arrow from '../images/icons/icon-arrow.svg';
+import greenArrow from '../images/icons/icon-arrow-green.svg';
 
 const ContactForm = () => {
+    const [validForm, setValidForm] = useState(false);
     let formEl = useRef(null);
 
     function isEmpty() {
@@ -11,6 +13,12 @@ const ContactForm = () => {
             if (input.children[0].value.trim() === '') {
                 input.classList.add('invalid')
                 input.children[1].innerText = `Can't be empty`
+
+                const timeoutID = setTimeout(() => {
+                    input.classList.remove('invalid')
+                    return () => clearTimeout(timeoutID)
+                }, 10000)
+                
             } else {
                 input.classList.remove('invalid')
             }
@@ -22,7 +30,13 @@ const ContactForm = () => {
 
         if (!validateEmail(email.children[0].value.trim()) && email.children[0].value !== '') {
             email.classList.add('invalid')
-            email.children[1].innerText = `Email invalid`
+            email.children[1].innerText = `Please use a valid email address`
+
+            const timeoutID = setTimeout(() => {
+                email.children[0].value === '' && email.classList.remove('invalid')
+                return () => clearTimeout(timeoutID)
+            }, 10000)
+            
         } else {
             isEmpty(email.children[0].value.trim())
         }
@@ -34,26 +48,36 @@ const ContactForm = () => {
         }
     }
 
-    const checkInputs = e => {
+    const checkInputs = (e) => {
         let inputElements = [...formEl.current.children].slice(0, -1);
 
         e.preventDefault();
         isEmpty()
         isValid()
 
-        !inputElements.some(input => input.classList.contains('invalid')) 
-            && formEl.current.reset()
+        if (!inputElements.some(input => input.classList.contains('invalid'))) {
+            setValidForm(true)
+            setTimeout(() => {
+                formEl.current.reset()
+                setValidForm(false)
+            }, 1000)
+        }        
+    }
+
+    const tryAgain = e => {
+        e.target.parentElement.classList.remove('invalid')
     }
     
     return (
         <div className="connect__section">
-            <h1 className="connect__section__heading">Connect with us</h1>
+            <h2 className="connect__section__heading">Connect with us</h2>
             <form className="connect__section__form" ref={formEl} onSubmit={checkInputs}>
                 <div className="connect__section__form__control">
                     <input 
                         aria-label="Enter your first and last name here"
                         placeholder="Name"
                         type="text"
+                        onFocus={tryAgain}
                     />
                     <small />
                 </div>
@@ -62,6 +86,7 @@ const ContactForm = () => {
                         aria-label="Enter your email address here"
                         placeholder="Email"
                         type="email"
+                        onFocus={tryAgain}
                     />
                     <small />
                 </div>
@@ -69,11 +94,16 @@ const ContactForm = () => {
                     <textarea 
                         aria-label="Enter your message here"
                         placeholder="Message"
+                        onFocus={tryAgain}
                     />
                     <small />
                 </div>
                 <button className="connect__section__form__button">
-                    <img className="connect__section__form__button--arrow" src={arrow} alt="" />
+                    <img 
+                        className={`connect__section__form__button--arrow ${validForm && 'active'}`} 
+                        src={validForm ? greenArrow : arrow} 
+                        alt="" 
+                    />
                 </button>
             </form>
         </div>
