@@ -95,6 +95,7 @@
     
             ul {
                 flex-direction: column;
+                align-items: flex-start;
                 
                 li {
                     color: get-color(dark-blue);
