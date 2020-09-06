@@ -12,7 +12,6 @@ const HeroHomepage = () => {
         titles = data.map(i => i.title),
         paragraphs = data.map(i => i.subheading);
 
-
     useEffect(() => {
         picEl.current.classList.add('active--timer');
         
@@ -39,7 +38,7 @@ const HeroHomepage = () => {
                 <img 
                     src={require('../images/home/desktop/' + backdrops[current])} 
                     ref={picEl} 
-                    alt="" 
+                    alt={`${titles[current]} porfolio preview`}
                 />
             </div>
             <div className="homepage__hero__textbox">
