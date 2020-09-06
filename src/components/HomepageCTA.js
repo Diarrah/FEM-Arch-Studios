@@ -10,7 +10,7 @@ const HomepageCTA = () => (
         </div>
         <div className="about__page__redirect__textbox">
             <h2 className="about__page__redirect__textbox--heading">Small team, <br /> big ideas</h2>
-            <Link to="/about us" className="btn about__page__redirect--btn">
+            <Link to="/about" className="btn about__page__redirect--btn">
                 <span>About Us</span>
                 <img className="arrow" src={arrow} alt="Arrow to redirect to about page" />
             </Link>
