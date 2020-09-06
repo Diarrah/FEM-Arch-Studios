@@ -1,12 +1,11 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 const PageLinks = () => {
     const pageNavigationLinks = ['portfolio', 'about us', 'contact'];
-    const linksContainer = useRef();
-
+    
     return (
-        <ul className="page__links__container" ref={linksContainer}>
+        <ul className="page__links__container">
             {pageNavigationLinks.map((link, i) => (
                 <li className="page__link" key={i}>
                     <Link to={`/${link}`}>{link}</Link>
