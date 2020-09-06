@@ -19,7 +19,8 @@ const Navbar = () => {
         links.forEach(link => link.addEventListener('click', () => {
             overlay.current.classList.remove('active')
             mobileMenu.current.classList.remove('deployed')
-            symbol.classList.remove('change')             
+            symbol.classList.remove('change')
+            body.style.overflowY = 'visible';           
         }))
     }
 
