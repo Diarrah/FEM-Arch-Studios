@@ -1,13 +1,22 @@
-import React from 'react';
-import heroDesktop from '../images/about/desktop/image-hero.jpg';
-import heroTablet from '../images/about/tablet/image-hero.jpg';
-import heroMobile from '../images/about/mobile/image-hero.jpg';
+import React, { useContext } from 'react';
+import { ResizeContext } from '../context/resize';
 
 const AboutHero = () => {
+    const { viewport } = useContext(ResizeContext);
+    let image = 'image-hero.jpg';
+
     return (
         <div className="about__hero">
             <div className="about__hero__image__container">
-                <img className="about__hero__image__container--image" src={heroDesktop} alt="" />
+                <img 
+                    className="about__hero__image__container--image" 
+                    src={
+                        viewport > 540
+                            ? require(`../images/about/desktop/` + image)
+                            : require(`../images/about/mobile/` + image)
+                    }  
+                    alt="" 
+                />
                 <div className="about__hero__image__container--void" />
                 <hr className="about__hero__image__container--line" />
             </div>

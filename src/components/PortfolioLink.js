@@ -1,12 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { ResizeContext } from '../context/resize';
 
 const PortfolioLink = ({ link: { picture, projectDate, projectName } }) => {
+    const { viewport } = useContext(ResizeContext);
+
     return (
         <Link to="#" className="portfolio__thumbnail">
             <img 
                 className="portfolio__thumbnail__background" 
-                src={require('../images/portfolio/desktop/' + picture)} 
+                src={
+                    viewport >= 805 
+                        ? require(`../images/portfolio/desktop/` + picture)
+                            : viewport >= 500
+                                ? require(`../images/portfolio/tablet/` + picture)
+                                : require(`../images/portfolio/mobile/` + picture)
+                } 
                 alt={`Link to ${projectName} project`}
             />
             <div className="portfolio__thumbnail__textbox">
