@@ -22,7 +22,7 @@ const HeroHomepage = () => {
 
             picEl.current.classList.remove('active--timer')
             picEl.current.classList.remove('active--click');
-        }, 8000)
+        }, 6000)
 
         return () => clearTimeout(timeoutID)
     }, [current])
