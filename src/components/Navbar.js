@@ -20,7 +20,8 @@ const Navbar = () => {
             overlay.current.classList.remove('active')
             mobileMenu.current.classList.remove('deployed')
             symbol.classList.remove('change')
-            body.style.overflowY = 'visible';           
+            body.style.overflowY = 'visible'; 
+            body.parentElement.style.overflowY = 'visible';          
         }))
     }
 
@@ -30,6 +31,7 @@ const Navbar = () => {
         mobileMenu.current.classList.toggle('deployed');
         overlay.current.classList.add('active');
         body.style.overflowY = 'hidden';
+        body.parentElement.style.overflowY = 'hidden';
     }
 
     const mobileNavClosed = e => {
@@ -42,6 +44,7 @@ const Navbar = () => {
         overlay.current.classList.remove('active');
         overlay.current.style.transitionDelay = '450ms';
         body.style.overflowY = 'visible';
+        body.parentElement.style.overflowY = 'visible';
         e.persist();
     }
 
