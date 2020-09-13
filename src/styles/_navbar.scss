@@ -76,9 +76,11 @@
             background-color: rgba(get-color(dark-blue), .75);
             z-index: 2;
             transition: .55s;
+            transition-delay: 450ms;
 
             &.active {
                 transform: translateX(0);
+                transition-delay: 0ms;
             }
         }    
 
@@ -91,6 +93,7 @@
             background-color: get-color(very-light-gray);
             transform: translateY(calc(-100% - 115px));
             transition: .70s ease-in-out;
+            transition-delay: 450ms;
             z-index: 5;
     
             ul {
@@ -107,6 +110,7 @@
     
             &.deployed {
                 transform: translateY(0);
+                transition-delay: 0ms;
             }
         }
     }
