@@ -23,7 +23,7 @@
 
         &--line {
             position: absolute;
-            bottom: 0; right: 2%;
+            bottom: -3px; right: 2%;
             width: 18%;
         }
     }
@@ -47,7 +47,6 @@
 
         &--line {
             width: 50px;
-            border-color: get-color(very-light-gray);
         }
 
         &--subheading {
