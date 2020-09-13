@@ -24,3 +24,8 @@ p {
     color: get-color(dark-gray);
     line-height: 1.667;
 }
+hr {
+    border: 0;
+    height: 1px;
+    background-color: get-color(light-gray);
+}
