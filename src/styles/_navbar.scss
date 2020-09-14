@@ -28,7 +28,7 @@
         }
     }
 
-    .navbar__links--mobile {
+    .navbar__links--mobile, .overlay {
         display: none;
     }
 
@@ -69,6 +69,7 @@
 
     @media screen and (max-width: 540px) {
         .overlay {
+            display: flex;
             transform: translateX(105%);
             position: absolute;
             width: 100vw; height: 102vh;
