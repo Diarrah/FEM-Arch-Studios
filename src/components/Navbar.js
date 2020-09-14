@@ -27,7 +27,7 @@ const Navbar = () => {
     }
 
     const hideMobileNav = () => {
-        let links = [...document.querySelector('.navbar__links--mobile').children[0].children];
+        let links = [...document.querySelectorAll('.page__link')].slice(3, 6);
 
         links.forEach(link => link.addEventListener('click', () => {
             setMenuOpen(false)
