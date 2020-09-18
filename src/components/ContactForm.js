@@ -98,7 +98,7 @@ const ContactForm = () => {
                     />
                     <small />
                 </div>
-                <button className="connect__section__form__button">
+                <button className="connect__section__form__button" aria-label="Submit completed form here">
                     <img 
                         className={`connect__section__form__button--arrow ${validForm && 'active'}`} 
                         src={validForm ? greenArrow : arrow} 
